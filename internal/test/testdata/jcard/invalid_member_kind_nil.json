@@ -1,0 +1,7 @@
+   ["vcard",
+     [
+       ["version", {}, "text", "4.0"],
+       ["fn", {}, "text", "test group-member-relation"],
+       ["member", {}, "uri", "https://tools.ietf.org/html/rfc6350#section-6.6.5"]
+     ]
+   ]

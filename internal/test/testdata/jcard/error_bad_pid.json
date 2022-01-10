@@ -1,0 +1,23 @@
+   ["vcard",
+     [
+       ["version", {}, "text", "4.0"],
+       ["fn", {}, "text", "Simon Perreault"],
+       ["n",
+         {},
+         "text",
+         ["Perreault", "Simon", "", "", ["ing. jr", "M.Sc."]]
+       ],
+       ["bday", {}, "date-and-or-time", "--02-03"],
+      
+       ["tel",
+         { "type": ["work", "cell", "voice", "video", "text"] },
+         "uri",
+         "tel:+1-418-262-6501"
+       ],
+       ["email",
+         { "type": "work","pid": ["5.a", "5.2"] },
+         "text",
+         "simon.perreault@viagenie.ca"
+       ]
+     ]
+   ]

@@ -1,0 +1,31 @@
+   ["vcard",
+     [
+       ["version", {}, "text", "4.0"],
+       ["fn", {}, "text", "Simon Perreault"],
+       ["n",
+         {},
+         "text",
+         ["Perreault", "Simon", "", "", ""]
+       ],
+       ["tel",
+         { "type": ["work"], "pref": "1" },
+         "uri",
+         "tel:+1-418-262-6501"
+       ],
+       ["tel",
+        { "type": ["work"], "pref": "2" },
+        "uri",
+        "tel:+1-201-555-0123"
+      ],
+      ["tel",
+        { "type": ["work"], "pref": "3" },
+        "uri",
+        "tel:7042;phone-context=example.com"
+      ],
+      ["tel",
+        { "type": ["work"], "pref": "4" },
+        "uri",
+        "tel:863-1234;phone-context=+1-914-555"
+      ]
+     ]
+   ]

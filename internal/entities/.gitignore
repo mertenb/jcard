@@ -1,0 +1,16 @@
+.idea
+.envrc
+.env
+.env.*
+!.env.dist
+/tmp
+logs
+*.log
+*.env
+bin/*
+!bin/.gitkeep
+.run
+/assets
+.vscode
+*.lock
+
