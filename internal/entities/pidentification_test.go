@@ -44,7 +44,7 @@ func TestAddN(t *testing.T) {
 	for _, tupel := range ns {
 		t.Run(fmt.Sprintf("%v", tupel.n), func(t *testing.T) {
 			if err := j.AddN(tupel.n, tupel.param); (err == nil) != tupel.valid {
-				t.Errorf("Got %v, want %v. (%w)", !tupel.valid, tupel.valid, err)
+				t.Errorf("Got %v, want %v. (%v)", !tupel.valid, tupel.valid, err)
 			}
 		})
 	}
@@ -64,7 +64,7 @@ func TestAddNickname(t *testing.T) {
 	for _, tupel := range ns {
 		t.Run(fmt.Sprintf("%v", tupel.nickname), func(t *testing.T) {
 			if err := j.AddNickname(tupel.nickname, tupel.param); (err == nil) != tupel.valid {
-				t.Errorf("Got %v, want %v. (%w)", !tupel.valid, tupel.valid, err)
+				t.Errorf("Got %v, want %v. (%v)", !tupel.valid, tupel.valid, err)
 			}
 		})
 	}
@@ -95,7 +95,7 @@ func TestAddPhoto(t *testing.T) {
 	for _, tupel := range ns {
 		t.Run(fmt.Sprintf("%v", tupel.photo), func(t *testing.T) {
 			if err := j.AddPhoto(tupel.photo, tupel.param); (err == nil) != tupel.valid {
-				t.Errorf("Got %v, want %v. (%w)", !tupel.valid, tupel.valid, err)
+				t.Errorf("Got %v, want %v. (%v)", !tupel.valid, tupel.valid, err)
 			}
 		})
 	}
@@ -119,7 +119,7 @@ func TestAddBDay(t *testing.T) {
 		t.Run(fmt.Sprintf("%v", tupel.bday), func(t *testing.T) {
 			j.RemoveAll("bday")
 			if err := j.AddBDay(tupel.bday, tupel.param); (err == nil) != tupel.valid {
-				t.Errorf("Got %v, want %v. (%w)", !tupel.valid, tupel.valid, err)
+				t.Errorf("Got %v, want %v. (%v)", !tupel.valid, tupel.valid, err)
 			}
 		})
 	}
@@ -170,7 +170,7 @@ func TestAddGender(t *testing.T) {
 		t.Run(fmt.Sprintf("%v", tupel.gender), func(t *testing.T) {
 			j.RemoveAll("gender")
 			if err := j.AddGender(tupel.gender, tupel.param); (err == nil) != tupel.valid {
-				t.Errorf("Got %v, want %v. (%w)", !tupel.valid, tupel.valid, err)
+				t.Errorf("Got %v, want %v. (%v)", !tupel.valid, tupel.valid, err)
 			}
 		})
 	}

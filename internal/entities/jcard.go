@@ -571,7 +571,7 @@ func (v *VCard) index(value *VCardProperty) int {
 func (v *VCard) append(prop *VCardProperty) error {
 	if error := prop.Validate(); error != nil {
 		log.Printf("Can't add %v to VCard. \n(\nValue: %v \nParameter: %v\n)", prop.Name, prop.Value, prop.Parameters)
-		return fmt.Errorf("Adding %v failed: %w", prop.Name, error)
+		return fmt.Errorf("Adding %v failed: %v", prop.Name, error)
 	}
 	v.Properties = append(v.Properties, prop)
 	return nil
@@ -749,7 +749,7 @@ func validateLanguageParam(params []string) error {
 	}
 	for _, v := range params {
 		if _, err := language.Parse(v); err != nil {
-			return vCardError(fmt.Sprintf("Unknown language (https://tools.ietf.org/html/rfc5646): %v :%w", v, err))
+			return vCardError(fmt.Sprintf("Unknown language (https://tools.ietf.org/html/rfc5646): %v :%v", v, err))
 		}
 	}
 	return nil

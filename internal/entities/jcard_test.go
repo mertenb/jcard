@@ -50,7 +50,7 @@ func TestValidation(t *testing.T) {
 	for _, filename := range filenames {
 		j, err := NewVCard(test.LoadFile(filename))
 		if err != nil {
-			t.Errorf("VCard could not created from file %v. Error: %w", filename, err)
+			t.Errorf("VCard could not created from file %v. Error: %v", filename, err)
 		} else {
 			j.Validate()
 			if !j.hasErrors() {
@@ -76,7 +76,7 @@ func TestVCardExample(t *testing.T) {
 		t.Errorf("Version is only allowed once.")
 	}
 	if err := propArray[0].Validate(); err != nil {
-		t.Errorf("Version error: %w", err)
+		t.Errorf("Version error: %v", err)
 	}
 
 	expectedN := &VCardProperty{
@@ -244,7 +244,7 @@ func TestPid(t *testing.T) {
 	}
 
 	if vcard.Validate(); vcard.hasErrors() {
-		t.Errorf("Error: %w", vcard.Errors)
+		t.Errorf("Error: %v", vcard.Errors)
 	}
 
 	if vcard, err = NewVCard(test.LoadFile("jcard/error_bad_pid.json")); err != nil {

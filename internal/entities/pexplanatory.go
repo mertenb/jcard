@@ -289,7 +289,7 @@ func ValidateClientPIDMap(p *VCardProperty) error {
 		return vCardError(fmt.Sprintf("a pair of values epxected (digit,uri), but got %v", aval))
 	}
 	if i, err := strconv.Atoi(aval[0].(string)); (err != nil) || (i < 1) {
-		return vCardError(fmt.Sprintf("The first field is a small integer (>0) corresponding to the second field of a PID parameter instance, but got %v. (%w)", aval[0], err))
+		return vCardError(fmt.Sprintf("The first field is a small integer (>0) corresponding to the second field of a PID parameter instance, but got %v. (%v)", aval[0], err))
 
 	}
 	uri := aval[1].(string)

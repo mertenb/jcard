@@ -45,7 +45,7 @@ func TestAddNote(t *testing.T) {
 	for _, tupel := range notes {
 		t.Run(fmt.Sprintf("%v", tupel.note), func(t *testing.T) {
 			if err := j.AddNote(tupel.note, tupel.param); (err == nil) != tupel.valid {
-				t.Errorf("Got %v, want %v. %w", !tupel.valid, tupel.valid, err)
+				t.Errorf("Got %v, want %v. %v", !tupel.valid, tupel.valid, err)
 			}
 		})
 	}
@@ -65,7 +65,7 @@ func TestAddProdid(t *testing.T) {
 	for _, tupel := range prodids {
 		t.Run(fmt.Sprintf("%v", tupel.prodid), func(t *testing.T) {
 			if err := j.AddProdid(tupel.prodid, tupel.param); (err == nil) != tupel.valid {
-				t.Errorf("Got %v, want %v. %w", !tupel.valid, tupel.valid, err)
+				t.Errorf("Got %v, want %v. %v", !tupel.valid, tupel.valid, err)
 			}
 		})
 	}
@@ -86,7 +86,7 @@ func TestAddRev(t *testing.T) {
 	for _, tupel := range revs {
 		t.Run(fmt.Sprintf("%v", tupel.rev), func(t *testing.T) {
 			if err := j.AddRev(tupel.rev, tupel.param); (err == nil) != tupel.valid {
-				t.Errorf("Got %v, want %v. %w", !tupel.valid, tupel.valid, err)
+				t.Errorf("Got %v, want %v. %v", !tupel.valid, tupel.valid, err)
 			}
 		})
 	}
@@ -114,7 +114,7 @@ func TestAddSound(t *testing.T) {
 	for i, tupel := range sounds {
 		t.Run(fmt.Sprintf("%v", i), func(t *testing.T) {
 			if err := j.AddSound(tupel.sound, tupel.param); (err == nil) != tupel.valid {
-				t.Errorf("Got %v, want %v. (%w)", !tupel.valid, tupel.valid, err)
+				t.Errorf("Got %v, want %v. (%v)", !tupel.valid, tupel.valid, err)
 			}
 		})
 	}
@@ -135,7 +135,7 @@ func TestAddUID(t *testing.T) {
 		t.Run(fmt.Sprintf("%v", tupel.uid), func(t *testing.T) {
 			j.RemoveAll("uid")
 			if err := j.AddUID(tupel.uid, tupel.param); (err != nil) || (j.GetFirst("uid").Type != tupel.expectedType) {
-				t.Errorf("Got %v, want %v. %w", j.GetFirst("uid").Type, tupel.expectedType, err)
+				t.Errorf("Got %v, want %v. %v", j.GetFirst("uid").Type, tupel.expectedType, err)
 			}
 		})
 	}
@@ -161,7 +161,7 @@ func TestAddClientPIDMap(t *testing.T) {
 		t.Run(fmt.Sprintf("%v", tupel.cpm), func(t *testing.T) {
 			j.RemoveAll("clientpidmap")
 			if err := j.AddClientPIDMap(tupel.cpm, tupel.param); (err == nil) != tupel.valid {
-				t.Errorf("Got %v, want %v. %w", !tupel.valid, tupel.valid, err)
+				t.Errorf("Got %v, want %v. %v", !tupel.valid, tupel.valid, err)
 			}
 		})
 	}
@@ -184,7 +184,7 @@ func TestAddURL(t *testing.T) {
 		t.Run(fmt.Sprintf("%v", tupel.url), func(t *testing.T) {
 			j.RemoveAll("url")
 			if err := j.AddURL(tupel.url, tupel.param); (err == nil) != tupel.valid {
-				t.Errorf("Got %v, want %v. %w", !tupel.valid, tupel.valid, err)
+				t.Errorf("Got %v, want %v. %v", !tupel.valid, tupel.valid, err)
 			}
 		})
 	}

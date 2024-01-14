@@ -24,7 +24,7 @@ func TestAddFburl(t *testing.T) {
 		t.Run(fmt.Sprintf("%v", tupel.n), func(t *testing.T) {
 			j.RemoveAll("fburl")
 			if err := j.AddFburl(tupel.n, tupel.param); (err == nil) != tupel.valid {
-				t.Errorf("Got %v, want %v. %w", !tupel.valid, tupel.valid, err)
+				t.Errorf("Got %v, want %v. %v", !tupel.valid, tupel.valid, err)
 			}
 		})
 	}
@@ -47,7 +47,7 @@ func TestAddCadadruri(t *testing.T) {
 		t.Run(fmt.Sprintf("%v", tupel.n), func(t *testing.T) {
 			j.RemoveAll("caladruri")
 			if err := j.AddCaladruri(tupel.n, tupel.param); (err == nil) != tupel.valid {
-				t.Errorf("Got %v, want %v. %w", !tupel.valid, tupel.valid, err)
+				t.Errorf("Got %v, want %v. %v", !tupel.valid, tupel.valid, err)
 			}
 		})
 	}
@@ -70,7 +70,7 @@ func TestAddCaluri(t *testing.T) {
 		t.Run(fmt.Sprintf("%v", tupel.n), func(t *testing.T) {
 			j.RemoveAll("caluri")
 			if err := j.AddCaluri(tupel.n, tupel.param); (err == nil) != tupel.valid {
-				t.Errorf("Got %v, want %v. %w", !tupel.valid, tupel.valid, err)
+				t.Errorf("Got %v, want %v. %v", !tupel.valid, tupel.valid, err)
 			}
 		})
 	}

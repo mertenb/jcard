@@ -23,7 +23,7 @@ func TestAddTz(t *testing.T) {
 		t.Run(fmt.Sprintf("%v", tupel.n), func(t *testing.T) {
 			j.RemoveAll("tz")
 			if err := j.AddTz(tupel.n, tupel.param); (err != nil) || (tupel.stype != j.GetFirst("tz").Type) {
-				t.Errorf("Got %v, want %v. (%w)", j.GetFirst("tz").Type, tupel.stype, err)
+				t.Errorf("Got %v, want %v. (%v)", j.GetFirst("tz").Type, tupel.stype, err)
 			}
 		})
 	}

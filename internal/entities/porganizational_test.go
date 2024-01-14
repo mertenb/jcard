@@ -72,7 +72,7 @@ func TestAddLogo(t *testing.T) {
 	for _, tupel := range ns {
 		t.Run(fmt.Sprintf("%v", tupel.name), func(t *testing.T) {
 			if err := j.AddLogo(tupel.logo, tupel.param); (err == nil) != tupel.valid {
-				t.Errorf("Got %v, want %v. (%w)", !tupel.valid, tupel.valid, err)
+				t.Errorf("Got %v, want %v. (%v)", !tupel.valid, tupel.valid, err)
 			}
 		})
 	}
@@ -144,7 +144,7 @@ func TestAddRelated(t *testing.T) {
 	for i, tupel := range related {
 		t.Run(fmt.Sprintf("%v_nr_%v", tupel.uriOrText, i), func(t *testing.T) {
 			if err := j.AddRelated(tupel.uriOrText, tupel.param); (err == nil) != tupel.valid {
-				t.Errorf("Got %v, want %v, %w", !tupel.valid, tupel.valid, err)
+				t.Errorf("Got %v, want %v, %v", !tupel.valid, tupel.valid, err)
 			}
 		})
 	}

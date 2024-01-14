@@ -82,7 +82,7 @@ func TestNormalizeTel(t *testing.T) {
 func TestAddPhone(t *testing.T) {
 	j, _ := NewVCard(test.LoadFile("jcard/ok_example.json"))
 	if err := j.AddTel("0049 3455 4432", map[string][]string{"type": {"voice", "cell"}, "pref": {"55"}}); err != nil {
-		t.Errorf("No error expected : all parameters are valid. %w", err)
+		t.Errorf("No error expected : all parameters are valid. %v", err)
 	}
 	if nil == j.AddTel("0049 3455 4432", map[string][]string{"type": {"voice", "cell"}, "pref": {"1", "2"}}) {
 		t.Errorf("Error expected : too many prefs")
@@ -101,13 +101,13 @@ func TestAddEmail(t *testing.T) {
 		t.Error("Error expected: type 'voice' and 'cell' are not allowed for emails.")
 	}
 	if err := j.AddEmail("test@test.de", map[string][]string{"type": {"home", "work"}, "pref": {"55"}}); err != nil {
-		t.Errorf("No error expected. %w", err)
+		t.Errorf("No error expected. %v", err)
 	}
 	if err := j.AddEmail("test@test.de", map[string][]string{"type": {"home"}, "pref": {"55"}}); err != nil {
-		t.Errorf("No error expected. %w", err)
+		t.Errorf("No error expected. %v", err)
 	}
 	if err := j.AddEmail("test@test.de", map[string][]string{}); err != nil {
-		t.Errorf("No error expected. %w", err)
+		t.Errorf("No error expected. %v", err)
 	}
 }
 
@@ -120,13 +120,13 @@ func TestAddLang(t *testing.T) {
 		t.Error("Error expected: type 'uselessandfalse' are not allowed for lang.")
 	}
 	if err := j.AddLang("FR", map[string][]string{"type": {"work"}, "pref": {"55"}}); err != nil {
-		t.Errorf("No error expected. %w", err)
+		t.Errorf("No error expected. %v", err)
 	}
 	if err := j.AddLang("zh-Hant", map[string][]string{"type": {"home"}, "pref": {"55"}}); err != nil {
-		t.Errorf("No error expected. %w", err)
+		t.Errorf("No error expected. %v", err)
 	}
 	if err := j.AddLang("de-Qaaa", map[string][]string{}); err != nil {
-		t.Errorf("No error expected. %w", err)
+		t.Errorf("No error expected. %v", err)
 	}
 }
 

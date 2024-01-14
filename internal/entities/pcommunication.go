@@ -150,7 +150,7 @@ func ValidateLang(p *VCardProperty) error {
 
 	lang := p.Value.(string)
 	if _, err := language.Parse(lang); err != nil {
-		return vCardError(fmt.Sprintf("Unknown language (https://tools.ietf.org/html/rfc5646): %v :%w", p.Value, err))
+		return vCardError(fmt.Sprintf("Unknown language (https://tools.ietf.org/html/rfc5646): %v :%v", p.Value, err))
 	}
 	return p.validateDefaultParam()
 }

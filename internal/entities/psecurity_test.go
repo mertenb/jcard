@@ -22,7 +22,7 @@ func TestAddKey(t *testing.T) {
 		t.Run(fmt.Sprintf("%v", tupel.n), func(t *testing.T) {
 			j.RemoveAll("key")
 			if err := j.AddKey(tupel.n, tupel.param); (err != nil) || (tupel.stype != j.GetFirst("key").Type) {
-				t.Errorf("Got %v, want %v. (%w)", j.GetFirst("key").Type, tupel.stype, err)
+				t.Errorf("Got %v, want %v. (%v)", j.GetFirst("key").Type, tupel.stype, err)
 			}
 		})
 	}
